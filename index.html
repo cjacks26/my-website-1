@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,21 +15,6 @@ margin:0;
 background:#f6f7fb;
 color:#333;
 }
-
-<nav>
-<div class="nav-container">
-
-<div class="logo">Chelsie Angeles</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#videos">Videos</a>
-<a href="#instagram">Instagram</a>
-<a href="#follow">Follow</a>
-</div>
-
-</div>
-</nav>
 
 nav{
 position:sticky;
@@ -64,12 +50,12 @@ color:#ff0000;
 }
 
 header{
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438");
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/flagged/photo-1593005510509-d05b264f1c9c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 background-size:cover;
 background-position:center;
 color:white;
-height:70vh;
+height:40vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -149,8 +135,64 @@ transition:0.2s;
 background:#444;
 }
 
+.follow-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+align-items:center;
+margin-top:30px;
+}
+
+.follow-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 32px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+font-size:16px;
+transition:all 0.3s ease;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+border:none;
+cursor:pointer;
+}
+
+.follow-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+.follow-btn-youtube{
+background:#FF0000;
+color:white;
+}
+
+.follow-btn-youtube:hover{
+background:#cc0000;
+}
+
+.follow-btn-instagram{
+background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color:white;
+}
+
+.follow-btn-instagram:hover{
+background:linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.follow-btn-tiktok{
+background:#000000;
+color:white;
+}
+
+.follow-btn-tiktok:hover{
+background:#333333;
+}
+
 footer{
-background:#111;
+background:#870000;
 color:white;
 text-align:center;
 padding:20px;
@@ -164,8 +206,20 @@ grid-template-columns:1fr;
 
 .insta-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
+}
+
+.insta-grid > div{
+aspect-ratio:1;
+overflow:hidden;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.insta-grid .instagram-media{
+width:100% !important;
+height:100% !important;
 }
 
 .insta-grid img{
@@ -178,10 +232,38 @@ transition:0.2s;
 transform:scale(1.05);
 }
 
+.insta-grid iframe{
+border:none;
+border-radius:10px;
+overflow:hidden;
+}
+
+.instagram-embed{
+max-width:450px;
+width:100%;
+}
+
+/* Instagram embed responsive */
+.insta-grid > div{
+width:100%;
+}
+
 </style>
 </head>
 
 <body>
+
+<nav>
+<div class="nav-container">
+<div class="logo">Chelsie Angeles</div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#videos">Videos</a>
+<a href="#instagram">Instagram</a>
+<a href="#follow">Follow</a>
+</div>
+</div>
+</nav>
 
 <header>
 <h1>Chelsie Angeles</h1>
@@ -216,24 +298,27 @@ Hey, I'm Chelsie! I'm a British Army soldier serving in the Royal Miltiary Polic
 
 <div class="insta-grid">
 
-<a href="https://instagram.com/p/DVERRMBDU5j" target="_blank">
-<img src="https://via.placeholder.com/300">
-</a>
+<div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVERRMBDU5j/" data-instgrm-version="14"></blockquote>
+</div>
 
-<a href="https://instagram.com/p/Cw-XgJ8K9oV" target="_blank">
-<img src="https://via.placeholder.com/300">
-</a>
+<div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw-XgJ8K9oV/" data-instgrm-version="14"></blockquote>
+</div>
 
 </div>
 
-</section></section>
+</section>
 
 <section id="follow">
 
 <h2>Follow Me</h2>
 
-<a href="https://youtube.com/chelsieangeles">YouTube</a>
-<a href="https://instagram.com/chelsieangeles_">Instagram</a>
+<div class="follow-buttons">
+<a href="https://youtube.com/chelsieangeles" class="follow-btn follow-btn-youtube">YouTube</a>
+<a href="https://instagram.com/chelsieangeles_" class="follow-btn follow-btn-instagram">Instagram</a>
+<a href="https://tiktok.com/chelsieangeles_" class="follow-btn follow-btn-tiktok">TikTok</a>
+</div>
 
 </section>
 
@@ -242,6 +327,8 @@ Hey, I'm Chelsie! I'm a British Army soldier serving in the Royal Miltiary Polic
 <p>© 2026 Chelsie Angeles</p>
 
 </footer>
+
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
