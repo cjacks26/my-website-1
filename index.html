@@ -162,6 +162,22 @@ grid-template-columns:1fr;
 }
 }
 
+.insta-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.insta-grid img{
+width:100%;
+border-radius:10px;
+transition:0.2s;
+}
+
+.insta-grid img:hover{
+transform:scale(1.05);
+}
+
 </style>
 </head>
 
@@ -210,23 +226,7 @@ Hey, I'm Chelsie! I'm a British Army soldier serving in the Royal Miltiary Polic
 
 </div>
 
-</section>
-
-.insta-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.insta-grid img{
-width:100%;
-border-radius:10px;
-transition:0.2s;
-}
-
-.insta-grid img:hover{
-transform:scale(1.05);
-}
+</section></section>
 
 <section id="follow">
 
